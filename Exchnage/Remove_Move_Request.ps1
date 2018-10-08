@@ -30,3 +30,4 @@ Get-MoveRequest -MoveStatus Completed | Remove-MoveRequest
 
 #Remove all failed move requests
 Get-MoveRequest -MoveStatus Failed | Remove-MoveRequest
+

@@ -1,22 +1,8 @@
-$logs = Get-EventLog -List | Select-Object LogDisplayName |
-Out-GridView -Title "Select one of more logs" -OutputMode Multiple
+help Tee-Object
+#Gets help on the Tee-Object command.  Tee-Object will save the command
+# output in a file or variable and also sent it down the pipeline
 
-
-$count = 1, 10, 25, 50 | Out-GridView  -Title "How Many Entries" -OutputMode Single
-
-
-$printer = Get-Printer | Select-Object Name | Out-GridView -Title "Select a Printer" -OutputMode Single
-
-$logs
-$count
-$printer
+Get-Process | Sort-Object WS -Descending | Select-Object -First 10 | Tee-Object -FilePath C:\PowerShellTraining\proc.txt
 
 
 
-
-$logs | ForEach-Object {
-    $_.LogDisplayName
-    Get-EventLog -LogName $_.LogDisplayName -Newest $count -EntryType  Error |
-    Select-Object     Timegenerated, Source, Message | Format-List |
-    Out-Printer $printer.Name
-}

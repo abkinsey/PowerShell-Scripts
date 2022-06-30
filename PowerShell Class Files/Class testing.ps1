@@ -8,4 +8,5 @@ Select-Object -First 10 -Property Id, Name, CPU, StartTime,
 
 Get-Service bits  | Select-Object *
 
-get-service | Select-Object DisplayName, Status, @{Name="ComputerName";Expression={$_.machinename}}
+Get-Service -machinename akinsey-laptop | Select-Object DisplayName, Status, @{Name="ComputerName";Expression={$_.machinename}}
+

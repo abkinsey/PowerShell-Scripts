@@ -1,4 +1,4 @@
-Get-Vegetable
+Get-Vegetable | Sort-Object Name
 
 Get-Vegetable | Select-Object Name -Unique
 
@@ -12,4 +12,6 @@ help Get-Vegetable -Parameter Name
 
 Get-Content C:\PowerShellTraining\veggies.txt | Where-Object {$_ -like "c*"} |Get-Vegetable
 
+(Get-Vegetable).Name
 
+(Get-Service | Where-Object Status -EQ running).DisplayName | Sort-Object | more

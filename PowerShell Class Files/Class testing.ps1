@@ -1,17 +1,22 @@
-Get-Vegetable | Sort-Object Name
+get-service BITS
 
-Get-Vegetable | Select-Object Name -Unique
+Get-Service | Get-Member name
 
-Get-Vegetable | Select-Object Name -Unique | Out-File C:\PowerShellTraining\veggies.txt
+dir C:\Windows\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml
 
-Get-Vegetable | Select-Object -ExpandProperty Name -Unique
+get-content C:\Windows\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml |
+Select-String system.serviceprocess.servicecontroller -Context 0,30 | more
 
-Get-Vegetable | Select-Object -ExpandProperty Name -Unique | Out-File C:\PowerShellTraining\veggies.txt
+Get-Service BITS | Format-Table
 
-help Get-Vegetable -Parameter Name
+Get-Service BITS | Format-List
 
-Get-Content C:\PowerShellTraining\veggies.txt | Where-Object {$_ -like "c*"} |Get-Vegetable
+Import-Csv C:\PowerShellTraining\computerdata.csv | Get-Member -MemberType Properties
 
-(Get-Vegetable).Name
+Import-Csv C:\PowerShellTraining\computerdata.csv
 
-(Get-Service | Where-Object Status -EQ running).DisplayName | Sort-Object | more
+Import-Csv C:\PowerShellTraining\computerdata2.csv 
+
+Import-Csv C:\PowerShellTraining\computerdata2.csv | Format-Table
+
+

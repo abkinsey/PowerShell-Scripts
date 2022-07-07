@@ -1,22 +1,12 @@
-get-service BITS
+help Format-Table
 
-Get-Service | Get-Member name
+dir C:\PowerShellTraining\*.dat | Format-Table -Property Fullname, length, lastwritetime
 
-dir C:\Windows\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml
+dir C:\PowerShellTraining\*.dat | format-table -property Fullname,Name,
+@{Name="Size";Expression={$_.length}},lastwritetime,
+@{Name="Age(Days)";Expression = { (Get-Date)-$_.lastwritetime | Select-Object -ExpandProperty TotalDays }}
 
-get-content C:\Windows\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml |
-Select-String system.serviceprocess.servicecontroller -Context 0,30 | more
-
-Get-Service BITS | Format-Table
-
-Get-Service BITS | Format-List
-
-Import-Csv C:\PowerShellTraining\computerdata.csv | Get-Member -MemberType Properties
-
-Import-Csv C:\PowerShellTraining\computerdata.csv
-
-Import-Csv C:\PowerShellTraining\computerdata2.csv 
-
-Import-Csv C:\PowerShellTraining\computerdata2.csv | Format-Table
-
-
+dir C:\PowerShellTraining\*.dat | Format-Table -Property FullName, Name,
+@{Name="Size";Expression={$_.length}}, LastWriteTime,
+@{Name="Age(Days)";Expression={(Get-Date)-$_.LastWriteTime | Select-Object -ExpandProperty TotalDays}
+}

@@ -6,7 +6,4 @@ dir C:\PowerShellTraining\*.dat | format-table -property Fullname,Name,
 @{Name="Size";Expression={$_.length}},lastwritetime,
 @{Name="Age(Days)";Expression = { (Get-Date)-$_.lastwritetime | Select-Object -ExpandProperty TotalDays }}
 
-dir C:\PowerShellTraining\*.dat | Format-Table -Property FullName, Name,
-@{Name="Size";Expression={$_.length}}, LastWriteTime,
-@{Name="Age(Days)";Expression={(Get-Date)-$_.LastWriteTime | Select-Object -ExpandProperty TotalDays}
-}
+Get-Vegetable | Format-Table -GroupBy color 

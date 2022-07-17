@@ -6,7 +6,7 @@
 # AUTHOR: Victor Ashiedu
 # EDITOR: Andrew Kinsey
 # DATE:  2016/05/16
-# EMAIL: akinsey@allrisks.com
+# EMAIL: 
 # 
 # COMMENT:  This script will pull a list of servers from a text file and calculate
 #           the free disk space on each disk.  It will then create a .csv file

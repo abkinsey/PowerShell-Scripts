@@ -6,20 +6,17 @@
 # DATE:  2022/07/17
 # EMAIL: 
 # 
-# COMMENT:  This script will....
+# COMMENT:  THis script will pull a list of OU's from the $data array and proceed to restart all of the computers
+#           within each specified OU.
 #
 # VERSION HISTORY
-# 1.0 2011.05.25 Initial Version.
-# 1.1 2011.06.14 Upgrade with...
+# 1.0 2022.07.17 Initial Version.
+# 1.1 
 #
 # TO ADD
 # -Add a Function to ...
 # -Fix the...
 # #############################################################################
-
-
-
-# Restart Computers in multiple OU's
 
 #Create array of OU's to use
 $Data=

@@ -21,7 +21,7 @@
 #Create array of OU's to use
 $Data=
 "OU=IT,OU=Test,dc=PSLAB,dc=local",
-#"OU=Accounting,OU=Test,dc=PSLAB,dc=local",
+"OU=Accounting,OU=Test,dc=PSLAB,dc=local",
 "OU=Marketing,OU=Test,dc=PSLAB,dc=local"
 
 #For each of the OU's in $data run the restart all computers.

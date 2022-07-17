@@ -27,4 +27,5 @@ $msg.subject = 'PUT SUBJECT IN HERE'
 $msg.body = (Get-Content $file | Out-String )
 $smtp.Send($msg)
 
+
 $msg.Dispose(); 

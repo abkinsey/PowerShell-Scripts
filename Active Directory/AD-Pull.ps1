@@ -3,7 +3,7 @@
 # NAME: AD-Pull.ps1
 # 
 # AUTHOR: Andrew Kinsey 
-# DATE:   2015/07/14
+# DATE:   2022/07/14
 # EMAIL:  
 # 
 # COMMENT:  THis scirpt is designed to pull a list of users from AD with specific fields

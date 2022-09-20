@@ -84,5 +84,3 @@ Get-ADUser -Filter * -SearchScope OneLevel -SearchBase "OU=Users,DC=Domain,DC=co
 #----------------------------------------------------------------------------
 
 Get-Content $path3 | Select -skip 1 | ConvertFrom-Csv -Header 'First Name','Last Name','Department','Title','Location','Phone','Email' | Export-csv $path2 -NoTypeInformation
-
-

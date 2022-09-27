@@ -55,8 +55,8 @@ if ($choice -eq '1' -or $choice -eq '2' -or $choice -eq '3') {
 else {
     Write-Host "You chose poorly!!"
     $type
-    Get-ChildItem 'C:\Users\abkin\Desktop\Rename\' | %{Rename-Item $_ -NewName ($prefix + ‘ - 0{0} by ’ -f $startnumber++ + $author +$_.extension)}
+    Get-ChildItem $path | %{Rename-Item $_ -NewName ($prefix + ‘ - 0{0} by ’ -f $startnumber++ + $author +$_.extension)}
 }
 
-
+$path
 

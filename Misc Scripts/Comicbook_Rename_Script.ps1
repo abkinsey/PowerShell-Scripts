@@ -43,7 +43,7 @@ Write-Host "4. Single Issue (Default)"
 $choice
 
 if ($choice -eq '1') { $type = "HC" }
-    elseif ($choice -eq '2') {$type = "TPB"}
+    elseif ($choice -eq '2') {$type = "TP"}
     elseif ($choice -eq '3') {$type = "Omnibus" }
     else { $type = "0" }
 

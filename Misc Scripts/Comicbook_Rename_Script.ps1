@@ -50,13 +50,14 @@ if ($choice -eq '1') { $type = "HC" }
 if ($choice -eq '1' -or $choice -eq '2' -or $choice -eq '3') {
     Write-Host "You picked Choice 1, 2 or 3!"
     $Type
-    Get-ChildItem $path | %{Rename-Item $_ -NewName ($prefix + ‘ - 0{0} by ’ -f $startnumber++ + $author + ‘ - ’ + $type +$_.extension)}
+    Get-ChildItem $path | %{Rename-Item $_.FullName -NewName ($prefix + ‘ - 0{0} by ’ -f $startnumber++ + $author + ‘ - ’ + $type +$_.extension)}
 }
 else {
     Write-Host "You chose poorly!!"
     $type
-    Get-ChildItem $path | %{Rename-Item $_ -NewName ($prefix + ‘ - 0{0} by ’ -f $startnumber++ + $author +$_.extension)}
+    Get-ChildItem $path | %{Rename-Item $_.FullName -NewName ($prefix + ‘ - 0{0} by ’ -f $startnumber++ + $author +$_.extension)}
 }
 
 $path
 
+Pause 50

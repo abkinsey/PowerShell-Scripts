@@ -6,7 +6,7 @@
 # DATE:  2022/10/16
 # EMAIL: 
 # 
-# COMMENT:  This script will....
+# COMMENT:  This script will..
 #
 # VERSION HISTORY
 # 1.0 2022.10.16 Initial Version.

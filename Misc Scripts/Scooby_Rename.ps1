@@ -1,17 +1,4 @@
-#Define path to .csv file
-$ImportFile = "\\Mac\Home\Desktop\Scooby-Doo Rename.xlsx"
+$folder="C:\temp2\rename" #target folder containing files
+$csv="c:\temp2\files.csv" #path to CSV file
 
-#Import Users from $to be moved into an array called $userobjects 
-$userobjects = Import-CSV $ImportFile
-
-
-ForEach ( $userobject in $userobjects ) {
- #Assign the content to variables
- $FileUsername = $userobject.username
- $FileDepartment = $userobject.department
- $FileManager = $userobject.manager
- #$FileAddress = $userobject.address
- #$FilePostalCode = $userobject.postalcode
- #$FilePhoneNumber = $userobject.phone
-
-}
+cd ($folder); import-csv ($csv)| foreach {rename-item -path $_.path -newname $_.filename}

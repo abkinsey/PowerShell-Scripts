@@ -6,11 +6,11 @@
 # DATE:  2022/10/16
 # EMAIL: 
 # 
-# COMMENT:  This script will....
+# COMMENT:  This script will..
 #
 # VERSION HISTORY
 # 1.0 2022.10.16 Initial Version.
-# 1.1 2011.06.14 Upgrade with...
+# 
 #
 # TO ADD
 # -Add a Function to ...
@@ -19,4 +19,4 @@
 
 $nr = 1
 
-Get-ChildItem  "C:\Users\abkin\Dropbox\Comics\! DC Dark Crisis Event\" | %{Rename-Item $_ -NewName (‘0{0}’ -f $nr++ + $($_.Name.Substring($_.Name.IndexOf('-'))))}
+Get-ChildItem  "c:\temp\*.*" | %{Rename-Item $_ -NewName (‘0{0}’ -f $nr++ + $($_.Name.Substring($_.Name.IndexOf('-'))))}

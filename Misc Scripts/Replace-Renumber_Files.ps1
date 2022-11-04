@@ -19,4 +19,4 @@
 
 $nr = 1
 
-Get-ChildItem  "c:\temp\*.*" | %{Rename-Item $_ -NewName (‘0{0}’ -f $nr++ + $($_.Name.Substring($_.Name.IndexOf('-'))))}
+Get-ChildItem  "C:\Users\abkin\Dropbox\Comics\! DC Dark Crisis Event\" | %{Rename-Item $_ -NewName (‘0{0}’ -f $nr++ + $($_.Name.Substring($_.Name.IndexOf('-'))))}

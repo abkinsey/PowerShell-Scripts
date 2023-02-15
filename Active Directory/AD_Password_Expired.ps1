@@ -9,3 +9,4 @@ if ($user.PasswordExpired) {
     Write-Output "$username password has not expired."
 }
 Pause
+

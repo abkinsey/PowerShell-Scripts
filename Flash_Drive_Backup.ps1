@@ -1,23 +1,24 @@
-# Prompt user for username and flash drive letter
+# Prompt user for username and drive letter
 $username = Read-Host "Enter username"
-$driveLetter = Read-Host "Enter flash drive letter (e.g. E:)"
+$driveLetter = Read-Host "Enter drive letter for flash drive (e.g. D)"
 
-# Create a directory with the username
-$directoryPath = "C:\Users\abkin\Dropbox\Flash Drive Backups\$username"
-New-Item -ItemType Directory -Path $directoryPath
+# Construct paths
+$sourcePath = "${driveLetter}:\"
+$destinationPath = "C:\Users\abkin\Dropbox\Flash Drive Backups\$username\"
 
-# Copy contents of flash drive to the directory, maintaining directory structure
-$sourcePath = "$driveLetter\*"
-$destinationPath = "$directoryPath\"
+# Create directory for user
+New-Item -ItemType Directory -Path $destinationPath -Force
+
+# Copy contents of flash drive to user directory
 $files = Get-ChildItem -Path $sourcePath -Recurse
-
-# Use a progress bar to show file copy status
-$totalFiles = $files.Count
-$currentFile = 0
+$total = $files.Count
+$i = 1
 foreach ($file in $files) {
-    $currentFile++
-    Write-Progress -Activity "Copying files" -Status "Copying $($file.Name) ($currentFile of $totalFiles)" -PercentComplete ($currentFile / $totalFiles * 100)
-    Copy-Item $file.FullName -Destination $destinationPath -Recurse -Force
+    $destinationFile = $file.FullName.Replace($sourcePath, $destinationPath)
+    Write-Host "Copying $($file.FullName) to $($destinationFile)"
+    Copy-Item -Path $file.FullName -Destination $destinationFile
+    $percentComplete = $i / $total * 100
+    Write-Progress -Activity "Copying Files" -PercentComplete $percentComplete -Status "Copying $($file.Name)" 
+    $i++
 }
-
-Write-Host "File copy complete!"
+Pause

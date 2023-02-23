@@ -4,7 +4,12 @@ $driveLetter = Read-Host "Enter drive letter for flash drive (e.g. D)"
 
 # Construct paths
 $sourcePath = "${driveLetter}:\"
-$destinationPath = "C:\Users\abkin\Dropbox\Flash Drive Backups\$username\"
+$destinationPath = "C:\Temp\Backup\$username\"
+
+$sourcePath
+$destinationPath
+
+Pause
 
 # Create directory for user
 New-Item -ItemType Directory -Path $destinationPath -Force

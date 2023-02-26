@@ -19,3 +19,4 @@
 
 
 Get-ChildItem | rename-item -NewName {$_.name -replace ".cbz",".zip"}
+Start-Process "C:\Program Files (x86)\WinRAR\WinRAR.exe"

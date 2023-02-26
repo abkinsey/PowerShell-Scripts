@@ -18,4 +18,12 @@
 # #############################################################################
 
 
-Get-ChildItem | rename-item -NewName {$_.name -replace ".zip",".cbz"}
+Get-ChildItem | rename-item -NewName {$_.name -replace ".cbz",".zip"}
+Start-Process "C:\Program Files (x86)\WinRAR\WinRAR.exe"
+
+Get-ChildItem *.zip
+Pause
+
+Get-ChildItem | rename-item -NewName {$_.name -replace ".rar",".cbr"}
+
+Pause

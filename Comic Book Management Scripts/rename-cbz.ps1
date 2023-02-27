@@ -18,4 +18,4 @@
 # #############################################################################
 
 
-Get-ChildItem | rename-item -NewName {$_.name -replace ".cbz",".zip"}
+Get-ChildItem | rename-item -NewName {$_.name -replace ".zip",".cbz"}
